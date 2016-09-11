@@ -1,4 +1,4 @@
-nherit_gem:
+inherit_gem:
   mad_rubocop: .rubocop.yml
 
 AllCops:
