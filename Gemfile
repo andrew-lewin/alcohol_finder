@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Paginate the things!
+gem 'will_paginate'
+
 group :development, :test do
   # Call 'binding.pry' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
@@ -40,6 +43,8 @@ group :development, :test do
   gem "brakeman", require: false
   # Use the rubocop settings that MX uses
   gem "mad_rubocop", require: false
+  # Bring back `assigns` in controller specs
+  gem 'rails-controller-testing'
 end
 
 group :development do
