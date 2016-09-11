@@ -1,0 +1,87 @@
+nherit_gem:
+  mad_rubocop: .rubocop.yml
+
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'coverage/**/*'
+    - 'db/**/*'
+    - 'vendor/**/*'
+
+Rails:
+  Enabled: true
+
+# Styles that are modified from the defaults
+
+Style/AndOr:
+  Description: >-
+                Whether `and` and `or` are banned only in conditionals (conditionals)
+                or completely (always).
+  StyleGuide: 'https://git.moneydesktop.com/dev/ruby-style-guide#use-and-or-or-control-flow'
+  EnforcedStyle: conditionals
+
+Style/BlockDelimiters:
+  Description: >-
+                Avoid using {...} for multi-line blocks (multiline chaining is
+                always ugly).
+                Prefer {...} over do...end for single-line blocks.
+  StyleGuide: 'https://git.moneydesktop.com/dev/ruby-style-guide#single-line-blocks'
+  Exclude:
+    - 'spec/**/*'
+
+Style/BlockEndNewline:
+  Description: 'Put end statement of multiline block on its own line.'
+  Enabled: true
+  Exclude:
+    - 'spec/**/*'
+
+Style/ClassAndModuleChildren:
+  Description: 'Checks style of children classes and modules.'
+  Enabled: true
+  Exclude:
+    - 'spec/**/*'
+
+Style/HashSyntax:
+  Description: >-
+                 Prefer Ruby 1.8 hash syntax { :a => 1, :b => 2 }
+                 over 1.9 syntax { a: 1, b: 2 }.
+  StyleGuide: 'https://git.moneydesktop.com/dev/ruby-style-guide#hash-literals'
+  EnforcedStyle: hash_rockets
+  Exclude:
+    - 'db/**/*'
+    - 'Gemfile'
+
+Style/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: no_space
+  SupportedStyles:
+    - space
+    - no_space
+  Exclude:
+    - 'spec/**/*'
+
+#################### Lint ################################
+
+Lint/ParenthesesAsGroupedExpression:
+  Description: >-
+                 Checks for method calls with a space before the opening
+                 parenthesis.
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#parens-no-spaces'
+  Exclude:
+    - 'spec/**/*'
+
+Rails/Validation:
+  Description: 'Use validates :attribute, hash of validations.'
+  Enabled: true
+  Exclude:
+    - 'app/models/ip_address.rb'
+
+# This model contains a constructor with 60 method calls.  Decided to not to refactor at the risk of breaking things
+Metrics/AbcSize:
+  Description: >-
+                 A calculated magnitude based on number of assignments,
+                 branches, and conditions.
+  Max: 15
+  Exclude:
+    - 'app/models/client_profile.rb'
+    - 'app/models/user_mobile_agreements_profile.rb'
