@@ -32,6 +32,11 @@ gem "jbuilder", "~> 2.5"
 # Paginate the things!
 gem "will_paginate"
 
+# Make HTTP requests to scrape DABC data
+gem "httpclient"
+# Parse HTML data sent back from HTML requests
+gem "nokogiri"
+
 group :development, :test do
   # Call 'binding.pry' anywhere in the code to stop execution and get a debugger console
   gem "pry"
