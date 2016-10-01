@@ -1,2 +1,2 @@
-class Store < ApplicationRecord
+class Store < ::ApplicationRecord
 end
