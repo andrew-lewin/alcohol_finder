@@ -1,11 +1,13 @@
 class CreateOrUpdateBeveragesJob < ::ApplicationJob
   queue_as :default
 
+  STRIP_VOLUME_FROM_DESCRIPTION_REGEX = /\s*\d+ml$/
+
   def perform
     beverages_array.each do |beverage_data|
       beverage = ::Beverage.find_or_create_by(:product_code => beverage_data[:csc])
       beverage.update_attributes(
-        :description => beverage_data[:description].gsub(/\d+ml$/, "").strip,
+        :description => beverage_data[:description].gsub(STRIP_VOLUME_FROM_DESCRIPTION_REGEX, ""),
         :size => "#{beverage_data[:size]}ml",
         :price => beverage_data[:price].gsub(/\$/, ""),
         :status => read_status(beverage_data[:status]),
