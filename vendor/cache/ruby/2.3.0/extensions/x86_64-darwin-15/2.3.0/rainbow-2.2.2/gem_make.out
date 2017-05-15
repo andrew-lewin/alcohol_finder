@@ -1,0 +1,5 @@
+current directory: /Users/wirdnah/Code/alcohol_finder/vendor/cache/ruby/2.3.0/gems/rainbow-2.2.2/ext
+/Users/wirdnah/.rvm/rubies/ruby-2.3.1/bin/ruby mkrf_conf.rb
+
+current directory: /Users/wirdnah/Code/alcohol_finder/vendor/cache/ruby/2.3.0/gems/rainbow-2.2.2/ext
+/Users/wirdnah/.rvm/rubies/ruby-2.3.1/bin/ruby -rubygems /Users/wirdnah/Code/alcohol_finder/vendor/cache/ruby/2.3.0/gems/rake-12.0.0/exe/rake RUBYARCHDIR=/Users/wirdnah/Code/alcohol_finder/vendor/cache/ruby/2.3.0/extensions/x86_64-darwin-15/2.3.0/rainbow-2.2.2 RUBYLIBDIR=/Users/wirdnah/Code/alcohol_finder/vendor/cache/ruby/2.3.0/extensions/x86_64-darwin-15/2.3.0/rainbow-2.2.2
