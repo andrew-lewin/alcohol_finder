@@ -7,7 +7,7 @@ describe ::StoresController do
   describe 'GET #index' do
     it "assigns all stores as @stores" do
       get :index, :page => 1
-      expect(assigns(:stores)).to eq([store])
+      expect(assigns(:stores)).to eq(stores)
     end
   end
 

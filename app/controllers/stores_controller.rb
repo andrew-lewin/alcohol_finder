@@ -14,6 +14,6 @@ class StoresController < ApplicationController
 private
 
   def search_params
-    { :page => params[:page] }
+    pagination_options
   end
 end
